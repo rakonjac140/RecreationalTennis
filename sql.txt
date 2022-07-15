@@ -1,0 +1,96 @@
+CREATE TABLE roles (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(6) NOT NULL
+);
+
+CREATE TABLE ranglist (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    wins INT NOT NULL,
+    loses INT NOT NULL,
+    points INT NOT NULL
+);
+
+CREATE TABLE equipmentTypes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(10) NOT NULL 
+);
+
+CREATE TABLE equipment (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    model VARCHAR(255) NOT NULL,
+    equipmentType INT,
+    CONSTRAINT equipmentTypeFK FOREIGN KEY(equipmentType) REFERENCES equipmentTypes(id)
+);
+
+CREATE TABLE genders (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(6) NOT NULL
+);
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fullname VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(100),
+    ranglist INT,
+    gender INT,
+    equipment INT,
+    role INT,
+    club INT,
+    clubName VARCHAR(255),
+    clubAddress VARCHAR(255),
+    CONSTRAINT ranglistFK FOREIGN KEY(ranglist) REFERENCES ranglist(id),
+    CONSTRAINT genderFK FOREIGN KEY(gender) REFERENCES genders(id),
+    CONSTRAINT equipmentFK FOREIGN KEY(equipment) REFERENCES equipment(id),
+    CONSTRAINT roleTypeFK FOREIGN KEY(role) REFERENCES roles(id),
+    CONSTRAINT clubFK FOREIGN KEY(club) REFERENCES users(id)
+);
+
+CREATE TABLE fields (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    location VARCHAR(255) NOT NULL,
+    base VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE reservations (
+	date DATE,
+    time INT,
+    fieldId INT,
+    user INT,
+    CONSTRAINT PRIMARY KEY(date, time, fieldId),
+    CONSTRAINT userIdFK FOREIGN KEY(user) REFERENCES users(id)
+);
+
+CREATE TABLE matchEvidency (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    date DATE NOT NULL,
+    hostScore INT NOT NULL,
+    challengerScore INT NOT NULL,
+    winnerID INT NOT NULL,
+    host INT,
+    challenger INT,
+    CONSTRAINT hostFK FOREIGN KEY (host) REFERENCES users(id),
+    CONSTRAINT challengerFK FOREIGN KEY (challenger) REFERENCES users(id)
+);
+
+INSERT INTO genders VALUES (1, 'male');
+INSERT INTO genders VALUES (2, 'female');
+
+INSERT INTO equipmenttypes VALUES (1, 'sneakers');
+INSERT INTO equipmenttypes VALUES (2, 'shorts');
+INSERT INTO equipmenttypes VALUES (3, 'T-shirt');
+INSERT INTO equipmenttypes VALUES (4, 'racket');
+INSERT INTO equipmenttypes VALUES (5, 'hat');
+
+INSERT INTO roles VALUES (1, 'player');
+INSERT INTO roles VALUES (2, 'admin');
+INSERT INTO roles VALUES (3, 'guest');
+INSERT INTO roles VALUES (4, 'club');
+
+CREATE TABLE plays (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    value VARCHAR(12)
+);
+
+INSERT INTO plays VALUES (1, "left-handed");
+INSERT INTO plays VALUES (2, "right-handed");

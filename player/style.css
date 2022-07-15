@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* NAVBAR */
+
+.header {
+  background-color: #141414 !important;
+  position: sticky;
+}
+
+/* PROFILE */
+
+.left {
+  overflow: hidden;
+}
+
+.left-wrapper {
+  max-width: 850px;
+}
+
+.left-up {
+  position: relative;
+}
+
+.ranking {
+  font-family: Work Sans, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  line-height: 1.11;
+  letter-spacing: -.06rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  width: 900px;
+  position: absolute;
+  right: 0;
+}
+
+#rank {
+  font-family: 'Anybody', cursive;
+  font-weight: 900;
+  font-size: 9rem;
+  line-height: .83;
+  color: #fff;
+}
+
+.left-down {
+  background-color: #E6E6E6;
+  position: relative;
+}
+
+.left-up, .left-down {
+  margin-right: 8px !important;
+}
+
+.left-down img {
+  transform: translateY(-25%);
+  width: 450px;
+  position: absolute;
+  right: 0;
+}
+
+.left-up, .right {
+  background-color: #5DB080;
+}
+
+.right {
+  padding-left: 50px !important;
+}
+
+.name {
+  text-transform: uppercase;
+  font-family: 'Teko', sans-serif;  
+  height: 30px;
+  font-weight: 500;
+  margin-top: 20px !important;
+  color: white;
+}
+
+#firstName {
+  font-size: 40px; 
+}
+
+#lastName {
+  font-size: 50px;
+}
+
+#firstName, #lastName {
+  text-transform: uppercase;
+  width: 200px;
+  height: 60px;
+}
+
+#you {
+  font-size: 22px; 
+}
+
+#opponent {
+  font-size: 22px;
+}
+
+#you, #opponent {
+  text-transform: uppercase;
+  width: 200px;
+  height: 60px;
+}
+
+.flag {  
+  align-items: center;
+  margin-top: 40px;
+}
+
+#flag-input {  
+  font-family: 'Teko', sans-serif;  
+  margin-left: 10px;
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#club {
+  font-size: 30px;
+  width: 150px;
+  font-weight: 500;  
+  font-family: 'Teko', sans-serif;  
+  color: white;
+}
+
+select:disabled {
+  color: white !important;
+  background: #5DB080 !important;
+  border: none !important;
+}
+
+select {
+  color: #000 !important;
+  background: white !important;
+  border: 1px solid black !important;
+}
+
+#club-name {
+  font-size: 22px;
+  font-family: 'Teko', sans-serif;  
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+.inline-first, .inline-second {
+  color: white;
+}
+
+.height-title, .age-title, .plays-title, .birthplace-title {
+  font-size: 30px;
+  width: 150px;
+  font-weight: 500;  
+  font-family: 'Teko', sans-serif;  
+} 
+
+.height-value, .age-value, .plays-value, .birthplace-value, #club {
+  font-size: 22px;
+  font-family: 'Teko', sans-serif;  
+  font-weight: 100;
+} 
+
+input[type="text"][readonly], input[type="number"][readonly], textarea {
+ background-color: #5DB080 !important;
+ width: 130px;
+ border: 0;
+ outline: none;
+ color: white;  
+ font-family: 'Teko', sans-serif;  
+}
+
+#lastNameRow {
+  margin-top: 32px !important;
+}
+
+input[type="text"], input[type="number"], textarea {
+  width: 130px;
+  border: 1px solid #141414;
+  font-family: 'Teko', sans-serif;  
+  border-radius: 10px;
+ }
+
+#edit {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  height: 30px;
+  width: 80px;
+  border: 1px solid white;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #000;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.delete {
+  height: 340px !important;
+}
+
+#equipmentWrapper {
+  background-color: #5DB080;
+  display: flex;
+  flex-direction: row;
+}
+
+.uploadInput {
+  margin-left: 20%;
+  margin-bottom: 10px;
+}
+
+.equipmentTitle {
+  color: white !important;
+  font-family: 'Teko', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+#profile {
+  margin-bottom: 8px;
+}
+
+.errorWrapper {
+  background-color: #5DB080;
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.errorWrapper p {
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 991px) {
+  .left-up, .left-down {
+    margin-right: 0 !important;
+  }
+  .ranking {
+    left: 0 !important;
+    width: 80px;
+  }
+  #equipmentWrapper {
+    flex-direction: column;
+  }
+}
+
+/* MATCHES */
+
+.matches-title {
+  background-color: #141414;  
+  font-family: 'Teko', sans-serif;  
+}
+
+.matches-title h1{
+  font-size: 35px;
+}
+
+.matches-table {
+  background-color: #E6E6E6;
+  padding: 30px 0 30px 0;
+  overflow-x: scroll;
+}
+
+.matches-table table {
+  width: 1500px;
+  min-width: 1000px;
+  margin-inline: auto;
+}
+
+.matches-table thead {
+  font-size: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.editBtn, .deleteBtn {
+  border-radius: 15px;
+  padding: 5px 10px 2px 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Teko', sans-serif;  
+  color: white;
+} 
+
+.editBtn:hover, .deleteBtn:hover {
+  text-decoration: none;
+  color: #141414;
+}
+
+.editBtn {
+  background-color: #5DB080;
+}
+
+.deleteBtn {
+  background-color: #dc2f55;
+}
+
+.buttons button {
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #d5d5e7;
+  cursor: pointer;
+  font-size: 20px;
+  margin-inline: 20px;
+  transition: .3s ease-in-out;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+  transition: .3s ease-in-out;
+}
+
+/* ADD MATCH */
+
+#newMatchBody {
+  align-items: center;
+  background-color: #5DB080;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#editForm {
+  height: 630px !important;
+}
+
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 700px;
+  padding: 20px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100% !important; 
+}
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder
+{
+  color: #dc2f55;
+}
+
+#date {
+  color-scheme: dark;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #06b;
+}
